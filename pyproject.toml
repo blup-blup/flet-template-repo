@@ -1,0 +1,45 @@
+[project]
+name = "flet_test"
+version = "0.1.2"
+description = ""
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [
+    { name = "Flet developer", email = "you@example.com" }
+]
+dependencies = [
+  "flet==0.28.3",
+  "flet-permission-handler>=0.1.0",
+  "yt-dlp>=2025.10.22",
+]
+
+[tool.flet]
+# org name in reverse domain name notation, e.g. "com.mycompany".
+# Combined with project.name to build bundle ID for iOS and Android apps
+org = "com.mycompany"
+
+# project display name that is used as an app title on Android and iOS home screens,
+# shown in window titles and about app dialogs on desktop.
+product = "test-flet"
+
+# company name to display in about app dialogs
+company = "Flet"
+
+# copyright text to display in about app dialogs
+copyright = "Copyright (C) 2025 by Flet"
+
+permissions = ["camera", "microphone"] # --permissions
+
+[tool.flet.app]
+path = "src"
+
+[tool.uv]
+dev-dependencies = [
+    "flet[all]==0.28.3",
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+flet = {extras = ["all"], version = "0.28.3"}
